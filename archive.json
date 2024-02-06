@@ -1,0 +1,104 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-02-06T01:05:43.453061+00:00",
+  "repo": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJDfT3c5K69Hs",
+      "title": "Update draft-yi-idr-bgp-fs-edge-service-metadata.md",
+      "url": "https://github.com/VMatrix1900/draft-bgp-fs-edge-service-metadata/pull/1",
+      "state": "MERGED",
+      "author": "fjzzhongyi",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-02-28T11:47:23Z",
+      "updatedAt": "2023-02-28T11:49:38Z",
+      "baseRepository": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
+      "baseRefName": "main",
+      "baseRefOid": "146de8cfc7686d85a058b7798a9119988df65c8d",
+      "headRepository": "fjzzhongyi/draft-bgp-fs-edge-service-metadata-1",
+      "headRefName": "patch-1",
+      "headRefOid": "587bdbf694ed4fc2b5df7ecd53ab33fd6e80e177",
+      "closedAt": "2023-02-28T11:49:38Z",
+      "mergedAt": "2023-02-28T11:49:38Z",
+      "mergedBy": "VMatrix1900",
+      "mergeCommit": {
+        "oid": "9d207620f88f308b816f5d23c6957a315ccb4883"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJDfT3c5OhS8C",
+          "commit": {
+            "abbreviatedOid": "587bdbf"
+          },
+          "author": "VMatrix1900",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-28T11:48:08Z",
+          "updatedAt": "2023-02-28T11:48:08Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "hhh",
+              "createdAt": "2023-02-28T11:48:08Z",
+              "updatedAt": "2023-02-28T11:48:08Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
