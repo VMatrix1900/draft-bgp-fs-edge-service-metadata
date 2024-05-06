@@ -11,27 +11,25 @@
 <meta content="Xiangfeng Ding" name="author">
 <meta content="Haibo Wang" name="author">
 <meta content="
-       In edge computing, a service may be deployed on multiple instances within one or more sites, called edge service. The edge service is associated with an ANYCAST IP address, and the route of it along with service metadata can be collected by a central controller. The controller may process the metadata and distribute the result to ingress routers using BGP FlowSpec. The service metadata can be used by ingress routers to make path selections not only based on the routing cost but also the running environment of the edge services. This document describes a mechanism to distribute the information of the service routes and related service metadata using BGP FlowSpec. 
+       In edge computing, a service may be deployed on multiple instances within one or more sites, called edge service. The edge service is associated with an ANYCAST IP address. Its routes along with service metadata can be collected by a central controller. The controller may process the metadata and distribute the result to ingress routers using BGP FlowSpec. The service metadata can be used by ingress routers to make path selections not only based on the routing cost but also on the running environment of the edge services. This document describes a mechanism to distribute the information of the service routes and related service metadata using BGP FlowSpec. 
     " name="description">
-<meta content="xml2rfc 3.16.0" name="generator">
+<meta content="xml2rfc 3.21.0" name="generator">
 <meta content="draft-yi-idr-bgp-fs-edge-service-metadata-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.16.0
-    Python 3.10.10
-    appdirs 1.4.4
-    ConfigArgParse 1.5.3
-    google-i18n-address 2.5.2
-    html5lib 1.1
+  xml2rfc 3.21.0
+    Python 3.11.9
+    ConfigArgParse 1.7
+    google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
-    lxml 4.9.2
-    MarkupSafe 2.1.1
+    lxml 4.9.3
+    platformdirs 4.2.1
     pycountry 22.3.5
-    PyYAML 6.0
-    requests 2.28.1
-    setuptools 65.6.0
+    PyYAML 6.0.1
+    requests 2.31.0
+    setuptools 68.2.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.13
 -->
 <link href="draft-yi-idr-bgp-fs-edge-service-metadata.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -613,6 +611,7 @@ sub, sup {
   clear: left;
   float: left;
   text-align: right;
+  margin-right: 1ch;
 }
 #identifiers dd {
   margin: 0;
@@ -653,7 +652,7 @@ sub, sup {
 }
 #toc nav li {
   line-height: 1.3em;
-  margin: 0.75em 0;
+  margin: 2px 0;
   padding-left: 1.2em;
   text-indent: -1.2em;
 }
@@ -664,7 +663,8 @@ sub, sup {
 .references dt {
   text-align: right;
   font-weight: bold;
-  min-width: 7em;
+  min-width: 10ch;
+  margin-right: 1.5ch;
 }
 .references dt:target::before {
   content: "⇒";
@@ -672,7 +672,7 @@ sub, sup {
   margin: 0 10px 0 -25px;
 }
 .references dd {
-  margin-left: 8em !important;
+  margin-left: 12ch !important;
   overflow: auto;
 }
 
@@ -745,7 +745,7 @@ hr.addr {
     z-index: 2;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 1px 0 0 0;
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
@@ -869,16 +869,13 @@ hr.addr {
     border-top: none;
     padding-top: 0;
   }
-  figure, pre {
+  figure, pre, .vcard {
     page-break-inside: avoid;
-  }
-  figure {
-    overflow: scroll;
   }
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
   }
-  h2+*, h3+*, h4+*, h5+*, h6+* {
+  :is(h2, h3, h4, h5, h6)+*, dd {
     page-break-before: avoid;
   }
   pre {
@@ -891,6 +888,9 @@ hr.addr {
   }
   td {
     border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
   }
 }
 
@@ -992,28 +992,6 @@ address div.right {
   text-align: right;
 }
 
-/* Give the table caption label the same styling as the figcaption */
-
-@media print {
-  .toplink {
-    display: none;
-  }
-
-  /* avoid overwriting the top border line with the ToC header */
-  #toc {
-    padding-top: 1px;
-  }
-
-  /* Avoid page breaks inside dl and author address entries */
-  dd {
-    page-break-before: avoid;
-  }
-  .vcard {
-    page-break-inside: avoid;
-  }
-
-}
-
 /* Dark mode. */
 @media (prefers-color-scheme: dark) {
 :root {
@@ -1050,11 +1028,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Service Metadata in BGP FlowSpec</td>
-<td class="right">February 2023</td>
+<td class="right">May 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Yi, et al.</td>
-<td class="center">Expires 1 September 2023</td>
+<td class="center">Expires 7 November 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1067,12 +1045,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-yi-idr-bgp-fs-edge-service-metadata-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-02-28" class="published">28 February 2023</time>
+<time datetime="2024-05-06" class="published">6 May 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2023-09-01">1 September 2023</time></dd>
+<dd class="expires"><time datetime="2024-11-07">7 November 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1104,7 +1082,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Distribution of Service Metadata in BGP FlowSpec</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">In edge computing, a service may be deployed on multiple instances within one or more sites, called edge service. The edge service is associated with an ANYCAST IP address, and the route of it along with service metadata can be collected by a central controller. The controller may process the metadata and distribute the result to ingress routers using BGP FlowSpec. The service metadata can be used by ingress routers to make path selections not only based on the routing cost but also the running environment of the edge services. This document describes a mechanism to distribute the information of the service routes and related service metadata using BGP FlowSpec.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">In edge computing, a service may be deployed on multiple instances within one or more sites, called edge service. The edge service is associated with an ANYCAST IP address. Its routes along with service metadata can be collected by a central controller. The controller may process the metadata and distribute the result to ingress routers using BGP FlowSpec. The service metadata can be used by ingress routers to make path selections not only based on the routing cost but also on the running environment of the edge services. This document describes a mechanism to distribute the information of the service routes and related service metadata using BGP FlowSpec.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1136,7 +1114,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 1 September 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 7 November 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1145,7 +1123,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2023 IETF Trust and the persons identified as the
+            Copyright (c) 2024 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1208,8 +1186,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Many modern services deploy their service instances in multiple sites to get better response time and resource utilization. These sites are often geographically distributed to serve the user demand. For some services such as VR/AR and intelligent transportation, the QoE will depend on both the network metrics and the compute metrics. For example, if the nearest site is overloaded due to the demand fluctuation, then steer the user traffic to another light-loaded sites may improve the QoE. To steer the traffic to the best site, the computing metadata of the site needs to be collected.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2"><span>[<a href="#I-D.ietf-idr-5g-edge-service-metadata" class="cite xref">I-D.ietf-idr-5g-edge-service-metadata</a>]</span> describes the BGP extension of distributing service route with network and computing-related metrics. The router connected to the site will received the service routes and service metadata sent from devices inside the edge site, and then generates the corresponding routes and distributes them to ingress routers. However, the route with service metadata on the router connected to the site can be also collected by a central controller using BGP LS. Then the central controller may process the metadata and distributes the result to the ingress router using BGP FlowSpec.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-1">Many modern services deploy their service instances in multiple sites to get better response time and resource utilization. These sites are often geographically distributed to serve the user demand. For some services such as VR/AR and intelligent transportation, the QoE will depend on both the network metrics and the compute metrics. For example, if the nearest site is overloaded due to the demand fluctuation, then steering the user traffic to another light-loaded site may improve the QoE. To steer the traffic to the best site, the computing metadata of the site needs to be collected.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2"><span>[<a href="#I-D.ietf-idr-5g-edge-service-metadata" class="cite xref">I-D.ietf-idr-5g-edge-service-metadata</a>]</span> describes the BGP extension of distributing service routes with network and computing-related metrics. The router connected to the site will receive the service routes and service metadata sent from devices inside the edge site, and then generate the corresponding routes and distribute them to ingress routers. However, the route with service metadata on the router connected to the site can be also collected by a central controller using BGP LS. Then the central controller may process the metadata and distribute the result to the ingress router using BGP FlowSpec.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">This document defines an extension of BGP FlowSpec to carry the service metadata along with the service route which is received from the controller. Using the service metadata and the service route, the ingress router can calculate the best site for the traffic, giving each user the best QoE.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <div id="terminology">
 <section id="section-1.1">
@@ -1236,7 +1214,7 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
       <h2 id="name-bgp-flowspec-extension-for-">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-bgp-flowspec-extension-for-" class="section-name selfRef">BGP FlowSpec Extension for Service Metadata</a>
       </h2>
-<p id="section-2-1">The goal of the BGP FlowSpec extension is to distribute the information of the service route and metadata. A service is identified by an prefix and this information is carried using the existing Destination Prefix Component specified in <span>[<a href="#RFC8955" class="cite xref">RFC8955</a>]</span> and <span>[<a href="#RFC8956" class="cite xref">RFC8956</a>]</span>. <span>[<a href="#I-D.ietf-idr-ts-flowspec-srv6-policy" class="cite xref">I-D.ietf-idr-ts-flowspec-srv6-policy</a>]</span> defines that the Color Extended Community and BGP Prefix-SID attribute is carried in the context of the FlowSpec NLRI.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">The goal of the BGP FlowSpec extension is to distribute the information of the service route and metadata. A service is identified by a prefix and this information is carried using the existing Destination Prefix Component specified in <span>[<a href="#RFC8955" class="cite xref">RFC8955</a>]</span> and <span>[<a href="#RFC8956" class="cite xref">RFC8956</a>]</span>. <span>[<a href="#I-D.ietf-idr-ts-flowspec-srv6-policy" class="cite xref">I-D.ietf-idr-ts-flowspec-srv6-policy</a>]</span> defines that the Color Extended Community and BGP Prefix-SID attribute is carried in the context of the FlowSpec NLRI.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">In addition to that, this document proposes to carry the service metadata attribute(See <a href="#fig-example" class="auto internal xref">Figure 1</a>). The ingress router can compare the compute metric of different sites and steer the traffic into the best one using the SR policy. The metadata can be original values defined in <span>[<a href="#I-D.ietf-idr-5g-edge-service-metadata" class="cite xref">I-D.ietf-idr-5g-edge-service-metadata</a>]</span> or an aggregated one calculated using original values.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <span id="name-example-of-using-bgp-flowsp"></span><div id="fig-example">
 <figure id="figure-1">
@@ -1275,11 +1253,14 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
         </h3>
 <p id="section-2.1-1">The Metadata Path Attribute TLV is the same as defined in <span>[<a href="#I-D.ietf-idr-5g-edge-service-metadata" class="cite xref">I-D.ietf-idr-5g-edge-service-metadata</a>]</span>, including the following three sub-TLVs:<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.1-2">
-<li id="section-2.1-2.1">Site Preference Index sub-TLV indicates the preference to choose the site.<a href="#section-2.1-2.1" class="pilcrow">¶</a>
+<li id="section-2.1-2.1">
+            <p id="section-2.1-2.1.1">Site Preference Index sub-TLV indicates the preference to choose the site.<a href="#section-2.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-2.1-2.2">Capacity Index sub-TLV indicates the capability of a site. One Edge Site can be in full capacity, reduced capacity, or completely out of service.<a href="#section-2.1-2.2" class="pilcrow">¶</a>
+          <li id="section-2.1-2.2">
+            <p id="section-2.1-2.2.1">Capacity Index sub-TLV indicates the capability of a site. One Edge Site can be at full capacity, reduced capacity, or completely out of service.<a href="#section-2.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-2.1-2.3">Load Measurement sub-TLV indicates the load level of the site.<a href="#section-2.1-2.3" class="pilcrow">¶</a>
+          <li id="section-2.1-2.3">
+            <p id="section-2.1-2.3.1">Load Measurement sub-TLV indicates the load level of the site.<a href="#section-2.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
@@ -1289,7 +1270,7 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
         <h3 id="name-aggregated-metric-path-attr">
 <a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-aggregated-metric-path-attr" class="section-name selfRef">Aggregated Metric Path Attribute TLV</a>
         </h3>
-<p id="section-2.2-1">The Aggregated Metric Path Attribute is a newly defined TLV(See <a href="#fig-Aggregated-Metric-Attribute" class="auto internal xref">Figure 2</a>). It contains a single aggregated value which is calculated by the controller using the original metrics such as site preference, capacity and load measurement.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2-1">The Aggregated Metric Path Attribute is a newly defined TLV(See <a href="#fig-Aggregated-Metric-Attribute" class="auto internal xref">Figure 2</a>). It contains a single aggregated value which is calculated by the controller using the original metrics such as site preference, capacity, and load measurement.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
 <span id="name-aggregated-metric-path-attri"></span><div id="fig-Aggregated-Metric-Attribute">
 <figure id="figure-2">
           <div class="alignLeft art-text artwork" id="section-2.2-2.1">
@@ -1308,11 +1289,14 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
           </figcaption></figure>
 </div>
 <ul class="normal">
-<li class="normal" id="section-2.2-3.1">Type: identify the Aggregated Metadata Attribute, to be assigned by IANA.<a href="#section-2.2-3.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2.2-3.1">
+            <p id="section-2.2-3.1.1">Type: identify the Aggregated Metadata Attribute, to be assigned by IANA.<a href="#section-2.2-3.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-2.2-3.2">Length: the total number of the octets of the value field.<a href="#section-2.2-3.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-2.2-3.2">
+            <p id="section-2.2-3.2.1">Length: the total number of the octets of the value field.<a href="#section-2.2-3.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-2.2-3.3">Value: value of Aggregated Computing metric.<a href="#section-2.2-3.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-2.2-3.3">
+            <p id="section-2.2-3.3.1">Value: the value of Aggregated Computing metric.<a href="#section-2.2-3.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1354,6 +1338,7 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
       </table>
 </section>
 </div>
+<div id="sec-normative-references">
 <section id="section-5">
       <h2 id="name-normative-references">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
@@ -1369,11 +1354,11 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-5g-edge-service-metadata">[I-D.ietf-idr-5g-edge-service-metadata]</dt>
       <dd>
-<span class="refAuthor">Dunbar, L.</span>, <span class="refAuthor">Majumdar, K.</span>, <span class="refAuthor">Wang, H.</span>, and <span class="refAuthor">G. S. Mishra</span>, <span class="refTitle">"BGP Extension for 5G Edge Service Metadata"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-5g-edge-service-metadata-00</span>, <time datetime="2022-12-02" class="refDate">2 December 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-5g-edge-service-metadata-00">https://datatracker.ietf.org/doc/html/draft-ietf-idr-5g-edge-service-metadata-00</a>&gt;</span>. </dd>
+<span class="refAuthor">Dunbar, L.</span>, <span class="refAuthor">Majumdar, K.</span>, <span class="refAuthor">Li, C.</span>, <span class="refAuthor">Mishra, G. S.</span>, and <span class="refAuthor">Z. Du</span>, <span class="refTitle">"BGP Extension for 5G Edge Service Metadata"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-5g-edge-service-metadata-18</span>, <time datetime="2024-04-25" class="refDate">25 April 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-5g-edge-service-metadata-18">https://datatracker.ietf.org/doc/html/draft-ietf-idr-5g-edge-service-metadata-18</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-ts-flowspec-srv6-policy">[I-D.ietf-idr-ts-flowspec-srv6-policy]</dt>
       <dd>
-<span class="refAuthor">Wenying, J.</span>, <span class="refAuthor">Liu, Y.</span>, <span class="refAuthor">Zhuang, S.</span>, <span class="refAuthor">Mishra, G. S.</span>, and <span class="refAuthor">S. Chen</span>, <span class="refTitle">"Traffic Steering using BGP FlowSpec with SRv6 Policy"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-ts-flowspec-srv6-policy-01</span>, <time datetime="2022-10-09" class="refDate">9 October 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-ts-flowspec-srv6-policy-01">https://datatracker.ietf.org/doc/html/draft-ietf-idr-ts-flowspec-srv6-policy-01</a>&gt;</span>. </dd>
+<span class="refAuthor">Wenying, J.</span>, <span class="refAuthor">Liu, Y.</span>, <span class="refAuthor">Zhuang, S.</span>, <span class="refAuthor">Mishra, G. S.</span>, and <span class="refAuthor">S. Chen</span>, <span class="refTitle">"Traffic Steering using BGP FlowSpec with SR Policy"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-ts-flowspec-srv6-policy-03</span>, <time datetime="2023-06-16" class="refDate">16 June 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-ts-flowspec-srv6-policy-03">https://datatracker.ietf.org/doc/html/draft-ietf-idr-ts-flowspec-srv6-policy-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
       <dd>
@@ -1385,6 +1370,7 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
 <dd class="break"></dd>
 </dl>
 </section>
+</div>
 <div id="authors-addresses">
 <section id="appendix-A">
       <h2 id="name-authors-addresses">

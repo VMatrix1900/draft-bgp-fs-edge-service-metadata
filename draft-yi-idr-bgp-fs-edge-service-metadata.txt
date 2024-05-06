@@ -5,11 +5,11 @@
 Inter-Domain Routing                                          X. Yi, Ed.
 Internet-Draft                                                T. He, Ed.
 Intended status: Standards Track                            China Unicom
-Expires: 1 September 2023                                    H. Shi, Ed.
+Expires: 7 November 2024                                     H. Shi, Ed.
                                                                  X. Ding
                                                                  H. Wang
                                                      Huawei Technologies
-                                                        28 February 2023
+                                                              6 May 2024
 
 
             Distribution of Service Metadata in BGP FlowSpec
@@ -19,14 +19,14 @@ Abstract
 
    In edge computing, a service may be deployed on multiple instances
    within one or more sites, called edge service.  The edge service is
-   associated with an ANYCAST IP address, and the route of it along with
-   service metadata can be collected by a central controller.  The
-   controller may process the metadata and distribute the result to
-   ingress routers using BGP FlowSpec.  The service metadata can be used
-   by ingress routers to make path selections not only based on the
-   routing cost but also the running environment of the edge services.
-   This document describes a mechanism to distribute the information of
-   the service routes and related service metadata using BGP FlowSpec.
+   associated with an ANYCAST IP address.  Its routes along with service
+   metadata can be collected by a central controller.  The controller
+   may process the metadata and distribute the result to ingress routers
+   using BGP FlowSpec.  The service metadata can be used by ingress
+   routers to make path selections not only based on the routing cost
+   but also on the running environment of the edge services.  This
+   document describes a mechanism to distribute the information of the
+   service routes and related service metadata using BGP FlowSpec.
 
 Discussion Venues
 
@@ -54,11 +54,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 September 2023.
+   This Internet-Draft will expire on 7 November 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -91,19 +91,19 @@ Table of Contents
    some services such as VR/AR and intelligent transportation, the QoE
    will depend on both the network metrics and the compute metrics.  For
    example, if the nearest site is overloaded due to the demand
-   fluctuation, then steer the user traffic to another light-loaded
-   sites may improve the QoE.  To steer the traffic to the best site,
-   the computing metadata of the site needs to be collected.
+   fluctuation, then steering the user traffic to another light-loaded
+   site may improve the QoE.  To steer the traffic to the best site, the
+   computing metadata of the site needs to be collected.
 
    [I-D.ietf-idr-5g-edge-service-metadata] describes the BGP extension
-   of distributing service route with network and computing-related
-   metrics.  The router connected to the site will received the service
+   of distributing service routes with network and computing-related
+   metrics.  The router connected to the site will receive the service
    routes and service metadata sent from devices inside the edge site,
-   and then generates the corresponding routes and distributes them to
+   and then generate the corresponding routes and distribute them to
    ingress routers.  However, the route with service metadata on the
    router connected to the site can be also collected by a central
    controller using BGP LS.  Then the central controller may process the
-   metadata and distributes the result to the ingress router using BGP
+   metadata and distribute the result to the ingress router using BGP
    FlowSpec.
 
    This document defines an extension of BGP FlowSpec to carry the
@@ -126,7 +126,7 @@ Table of Contents
 
    The goal of the BGP FlowSpec extension is to distribute the
    information of the service route and metadata.  A service is
-   identified by an prefix and this information is carried using the
+   identified by a prefix and this information is carried using the
    existing Destination Prefix Component specified in [RFC8955] and
    [RFC8956].  [I-D.ietf-idr-ts-flowspec-srv6-policy] defines that the
    Color Extended Community and BGP Prefix-SID attribute is carried in
@@ -173,7 +173,7 @@ Table of Contents
        the site.
 
    2.  Capacity Index sub-TLV indicates the capability of a site.  One
-       Edge Site can be in full capacity, reduced capacity, or
+       Edge Site can be at full capacity, reduced capacity, or
        completely out of service.
 
    3.  Load Measurement sub-TLV indicates the load level of the site.
@@ -183,7 +183,7 @@ Table of Contents
    The Aggregated Metric Path Attribute is a newly defined TLV(See
    Figure 2).  It contains a single aggregated value which is calculated
    by the controller using the original metrics such as site preference,
-   capacity and load measurement.
+   capacity, and load measurement.
 
       0                   1                   2                   3
       0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -200,7 +200,7 @@ Table of Contents
 
    *  Length: the total number of the octets of the value field.
 
-   *  Value: value of Aggregated Computing metric.
+   *  Value: the value of Aggregated Computing metric.
 
 3.  Security Considerations
 
@@ -232,20 +232,20 @@ Table of Contents
               <https://www.rfc-editor.org/info/rfc8956>.
 
    [I-D.ietf-idr-5g-edge-service-metadata]
-              Dunbar, L., Majumdar, K., Wang, H., and G. S. Mishra, "BGP
-              Extension for 5G Edge Service Metadata", Work in Progress,
-              Internet-Draft, draft-ietf-idr-5g-edge-service-metadata-
-              00, 2 December 2022,
+              Dunbar, L., Majumdar, K., Li, C., Mishra, G. S., and Z.
+              Du, "BGP Extension for 5G Edge Service Metadata", Work in
+              Progress, Internet-Draft, draft-ietf-idr-5g-edge-service-
+              metadata-18, 25 April 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-5g-
-              edge-service-metadata-00>.
+              edge-service-metadata-18>.
 
    [I-D.ietf-idr-ts-flowspec-srv6-policy]
               Wenying, J., Liu, Y., Zhuang, S., Mishra, G. S., and S.
-              Chen, "Traffic Steering using BGP FlowSpec with SRv6
+              Chen, "Traffic Steering using BGP FlowSpec with SR
               Policy", Work in Progress, Internet-Draft, draft-ietf-idr-
-              ts-flowspec-srv6-policy-01, 9 October 2022,
+              ts-flowspec-srv6-policy-03, 16 June 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-ts-
-              flowspec-srv6-policy-01>.
+              flowspec-srv6-policy-03>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
