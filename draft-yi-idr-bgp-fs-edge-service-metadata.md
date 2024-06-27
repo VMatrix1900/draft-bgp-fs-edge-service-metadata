@@ -119,14 +119,9 @@ In addition to that, this document proposes to carry the service metadata attrib
 ~~~
 {: #fig-example title="Example of using BGP FlowSpec to distribute the service route and metadata"}
 
-
 ## Metadata Path Attribute TLV
 
-The Metadata Path Attribute TLV is the same as defined in {{I-D.ietf-idr-5g-edge-service-metadata}}, including the following three sub-TLVs:
-
-1. Site Preference Index sub-TLV indicates the preference to choose the site.
-2. Capacity Index sub-TLV indicates the capability of a site. One Edge Site can be at full capacity, reduced capacity, or completely out of service.
-3. Load Measurement sub-TLV indicates the load level of the site.
+The Metadata Path Attribute TLV is the same as defined in {{I-D.ietf-idr-5g-edge-service-metadata}}.
 
 ## Aggregated Metric Path Attribute TLV {#metadata}
 
@@ -147,11 +142,9 @@ The Aggregated Metric Path Attribute is a newly defined TLV(See {{fig-Aggregated
 - Length: the total number of the octets of the value field.
 - Value: the value of Aggregated Computing metric.
 
-
 # Security Considerations
 
 TBD
-
 
 # IANA Considerations
 
