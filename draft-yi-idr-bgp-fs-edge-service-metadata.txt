@@ -5,13 +5,13 @@
 Inter-Domain Routing                                          X. Yi, Ed.
 Internet-Draft                                                T. He, Ed.
 Intended status: Standards Track                            China Unicom
-Expires: 29 December 2024                                    H. Shi, Ed.
+Expires: 16 August 2025                                      H. Shi, Ed.
                                                                  X. Ding
                                                                  H. Wang
                                                      Huawei Technologies
                                                                  Z. Wang
                                                                   Inspur
-                                                            27 June 2024
+                                                        12 February 2025
 
 
             Distribution of Service Metadata in BGP FlowSpec
@@ -56,11 +56,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 December 2024.
+   This Internet-Draft will expire on 16 August 2025.
 
 Copyright Notice
 
-   Copyright (c) 2024 IETF Trust and the persons identified as the
+   Copyright (c) 2025 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -227,17 +227,17 @@ Table of Contents
               Dunbar, L., Majumdar, K., Li, C., Mishra, G. S., and Z.
               Du, "BGP Extension for 5G Edge Service Metadata", Work in
               Progress, Internet-Draft, draft-ietf-idr-5g-edge-service-
-              metadata-19, 24 June 2024,
+              metadata-26, 15 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-5g-
-              edge-service-metadata-19>.
+              edge-service-metadata-26>.
 
    [I-D.ietf-idr-ts-flowspec-srv6-policy]
               Wenying, J., Liu, Y., Zhuang, S., Mishra, G. S., and S.
               Chen, "Traffic Steering using BGP FlowSpec with SR
               Policy", Work in Progress, Internet-Draft, draft-ietf-idr-
-              ts-flowspec-srv6-policy-03, 16 June 2023,
+              ts-flowspec-srv6-policy-05, 6 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-ts-
-              flowspec-srv6-policy-03>.
+              flowspec-srv6-policy-05>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
