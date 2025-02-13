@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-30T01:23:33.212582+00:00",
+  "timestamp": "2025-02-13T01:26:44.022061+00:00",
   "repo": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
   "labels": [
     {
@@ -47,6 +47,11 @@
       "name": "wontfix",
       "description": "This will not be worked on",
       "color": "ffffff"
+    },
+    {
+      "name": "template_sync",
+      "description": "",
+      "color": "C5DEF5"
     }
   ],
   "issues": [],
@@ -99,6 +104,36 @@
           ]
         }
       ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOJDfT3c6K5Q1w",
+      "title": "upstream merge template repository",
+      "url": "https://github.com/VMatrix1900/draft-bgp-fs-edge-service-metadata/pull/2",
+      "state": "MERGED",
+      "author": "VMatrix1900",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "template_sync"
+      ],
+      "body": "Merge https://github.com/martinthomson/internet-draft-template ea87c4f",
+      "createdAt": "2025-02-12T03:33:18Z",
+      "updatedAt": "2025-02-12T03:37:28Z",
+      "baseRepository": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
+      "baseRefName": "main",
+      "baseRefOid": "1c48c837c6dda9b326ac3c9181d85cbc6fad49db",
+      "headRepository": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
+      "headRefName": "chore/template_sync_ea87c4f",
+      "headRefOid": "5d140e6087c5e6840a1980447d0e52b76f28765b",
+      "closedAt": "2025-02-12T03:37:28Z",
+      "mergedAt": "2025-02-12T03:37:28Z",
+      "mergedBy": "VMatrix1900",
+      "mergeCommit": {
+        "oid": "57c1c93e77a27132337f4825f2e15e663ff0a10d"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
