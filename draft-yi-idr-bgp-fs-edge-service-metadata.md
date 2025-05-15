@@ -121,7 +121,11 @@ In addition to that, this document proposes to carry the service metadata attrib
 
 ## Metadata Path Attribute TLV
 
-The Metadata Path Attribute TLV is the same as defined in {{I-D.ietf-idr-5g-edge-service-metadata}}.
+The Metadata Path Attribute TLV is the same as defined in {{I-D.ietf-idr-5g-edge-service-metadata}}, including the following three sub-TLVs:
+
+1. Site Preference Index sub-TLV indicates the preference to choose the site.
+2. Capacity Index sub-TLV indicates the capability of a site. One Edge Site can be at full capacity, reduced capacity, or completely out of service.
+3. Load Measurement sub-TLV indicates the load level of the site.
 
 ## Aggregated Metric Path Attribute TLV {#metadata}
 
