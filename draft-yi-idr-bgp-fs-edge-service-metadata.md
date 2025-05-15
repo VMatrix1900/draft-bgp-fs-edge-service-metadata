@@ -28,11 +28,17 @@ author:
   city: Beijing
   country: China
  -
+  ins: C.Li
+  name: Cheng Li
+  organization: Huawei Technologies
+  email: c.l@huawei.com
+  role: editor
+  country: China
+ -
   ins: H.Shi
   name: Hang Shi
   organization: Huawei Technologies
   email: shihang9@huawei.com
-  role: editor
   city: Beijing
   country: China
  -
