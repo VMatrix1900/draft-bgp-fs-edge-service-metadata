@@ -5,7 +5,8 @@
 Inter-Domain Routing                                          X. Yi, Ed.
 Internet-Draft                                                T. He, Ed.
 Intended status: Standards Track                            China Unicom
-Expires: 16 November 2025                                    H. Shi, Ed.
+Expires: 16 November 2025                                     C. Li, Ed.
+                                                                  H. Shi
                                                                  X. Ding
                                                                  H. Wang
                                                      Huawei Technologies
@@ -274,7 +275,13 @@ Authors' Addresses
    Email: het21@chinaunicom.cn
 
 
-   Hang Shi (editor)
+   Cheng Li (editor)
+   Huawei Technologies
+   China
+   Email: c.l@huawei.com
+
+
+   Hang Shi
    Huawei Technologies
    Beijing
    China
