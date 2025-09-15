@@ -5,14 +5,14 @@
 Inter-Domain Routing                                          X. Yi, Ed.
 Internet-Draft                                                T. He, Ed.
 Intended status: Standards Track                            China Unicom
-Expires: 29 January 2026                                      C. Li, Ed.
+Expires: 19 March 2026                                        C. Li, Ed.
                                                                   H. Shi
                                                                  X. Ding
                                                                  H. Wang
                                                      Huawei Technologies
                                                                  Z. Wang
                                                                   Inspur
-                                                            28 July 2025
+                                                       15 September 2025
 
 
             Distribution of Service Metadata in BGP FlowSpec
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 January 2026.
+   This Internet-Draft will expire on 19 March 2026.
 
 Copyright Notice
 
@@ -246,9 +246,9 @@ Table of Contents
               Wenying, J., Liu, Y., Zhuang, S., Mishra, G. S., and S.
               Chen, "Traffic Steering using BGP FlowSpec with SR
               Policy", Work in Progress, Internet-Draft, draft-ietf-idr-
-              ts-flowspec-srv6-policy-06, 7 July 2025,
+              ts-flowspec-srv6-policy-07, 4 August 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-ts-
-              flowspec-srv6-policy-06>.
+              flowspec-srv6-policy-07>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
