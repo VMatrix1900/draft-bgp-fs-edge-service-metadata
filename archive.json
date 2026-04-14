@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-04-12T02:54:38.023610+00:00",
+  "timestamp": "2026-04-14T02:52:12.120724+00:00",
   "repo": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
   "labels": [
     {
@@ -386,7 +386,7 @@
       "id": "PR_kwDOJDfT3c7QGXY3",
       "title": "upstream merge template repository",
       "url": "https://github.com/VMatrix1900/draft-bgp-fs-edge-service-metadata/pull/10",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "VMatrix1900",
       "authorAssociation": "OWNER",
       "assignees": [],
@@ -395,13 +395,49 @@
       ],
       "body": "Merge https://github.com/martinthomson/internet-draft-template c544c79",
       "createdAt": "2026-04-06T01:59:24Z",
-      "updatedAt": "2026-04-06T01:59:25Z",
+      "updatedAt": "2026-04-13T02:07:26Z",
       "baseRepository": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
       "baseRefName": "main",
       "baseRefOid": "c9965a7fc9ac674b6005b37fa166c73fffa1c455",
       "headRepository": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
       "headRefName": "chore/template_sync_c544c79",
       "headRefOid": "bea2e1dc2f9abba80c6646ba6c28e916e69bc032",
+      "closedAt": "2026-04-13T02:07:25Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "VMatrix1900",
+          "authorAssociation": "OWNER",
+          "body": "[actions-template-sync] :construction_worker: automatically closed because there is a new open PR",
+          "createdAt": "2026-04-13T02:07:24Z",
+          "updatedAt": "2026-04-13T02:07:24Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDOJDfT3c7R2Lu-",
+      "title": "upstream merge template repository",
+      "url": "https://github.com/VMatrix1900/draft-bgp-fs-edge-service-metadata/pull/11",
+      "state": "OPEN",
+      "author": "VMatrix1900",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "template_sync"
+      ],
+      "body": "Merge https://github.com/martinthomson/internet-draft-template 92e42e9",
+      "createdAt": "2026-04-13T02:07:27Z",
+      "updatedAt": "2026-04-13T02:07:28Z",
+      "baseRepository": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
+      "baseRefName": "main",
+      "baseRefOid": "c9965a7fc9ac674b6005b37fa166c73fffa1c455",
+      "headRepository": "VMatrix1900/draft-bgp-fs-edge-service-metadata",
+      "headRefName": "chore/template_sync_92e42e9",
+      "headRefOid": "89af39b284e44886ead3f09a609f6f7416ae8bf8",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
